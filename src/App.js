@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from "react";
+import {CssBaseline, useTheme} from "@material-ui/core";
+import {useStyles} from "./style/styles";
+import Header from "./components/partials/Header";
+import SideBar from "./components/partials/SideBar";
+import {BrowserRouter} from "react-router-dom";
+import Configurator from "./components/Configurator";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App({window}) {
+    const classes = useStyles();
+    const theme = useTheme();
+    const [mobileOpen, setMobileOpen] = useState(false);
+    const handleDrawerToggle = () => {
+        setMobileOpen(!mobileOpen);
+    };
+
+    return <BrowserRouter>
+        <div className={classes.root}>
+            <CssBaseline/>
+            <Header classes={classes} handleDrawerToggle={handleDrawerToggle}/>
+            <SideBar classes={classes} handleDrawerToggle={handleDrawerToggle} theme={theme} mobileOpen={mobileOpen}
+                     window={window}/>
+            <Configurator classes={classes}/>
+        </div>
+    </BrowserRouter>
 }
-
-export default App;
