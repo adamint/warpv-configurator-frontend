@@ -14,7 +14,7 @@ export default function Configurator({classes}) {
     const [possibleParameters, setPossibleParameters] = useState();
     const [validations, setValidations] = useState()
     const [settingsValues, setSettingsValues] = useState({})
-    const {get, post, loading, loadingTime} = useFetch("http://localhost:8080")
+    const {get, post, loading, loadingTime} = useFetch(process.env.REACT_APP_BACKEND_URL)
 
     useConfiguratorParameters(get, setPossibleParameters);
     useParameterValidations(possibleParameters, setValidations);
