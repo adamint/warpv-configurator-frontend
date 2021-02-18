@@ -1,7 +1,7 @@
 import {Button, Fab, Snackbar, TextField, Typography} from "@material-ui/core";
 import {Link} from "react-router-dom";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
-import {useStyles} from "../style/styles";
+import {useStyles} from "../style/useStyles";
 import {useSettingsAccordionStyles} from "./settings/SettingsComponent";
 import {useState} from "react";
 import Alert from '@material-ui/lab/Alert';
@@ -42,7 +42,7 @@ export default function EnterJsonComponent({allSettings, settingsValues, setSett
 
     // noinspection PointlessBooleanExpressionJS
     return <>
-        <Typography variant="h4" style={{marginBottom: 10}}>Enter JSON</Typography>
+        <Typography variant="h4" className="margin-bottom-10">Enter JSON</Typography>
 
         <TextField
             id="outlined-multiline-static"
@@ -55,7 +55,7 @@ export default function EnterJsonComponent({allSettings, settingsValues, setSett
             onChange={e => setJsonText(e.target.value)}
             placeholder="Enter JSON configuration for a WARP-V core"
             helperText="This will override any manual parameters that you've set."
-            style={{marginBottom: 25}}
+            className="margin-bottom-25"
         />
 
         <Button variant="contained" color="primary" onClick={onButtonClick}>Import parameters</Button>

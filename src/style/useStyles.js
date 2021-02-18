@@ -1,4 +1,4 @@
-import {makeStyles} from "@material-ui/core";
+import {makeStyles} from "@material-ui/styles";
 
 const drawerWidth = 240
 
@@ -47,4 +47,4 @@ export const useStyles = makeStyles((theme) => ({
     extendedIcon: {
         marginRight: theme.spacing(1),
     },
-}));
+}),{index: 1});

@@ -1,34 +1,34 @@
-import {Fab, makeStyles, Typography} from "@material-ui/core";
+import {Fab, Typography} from "@material-ui/core";
 import {useEffect, useState} from "react";
 import Setting from "./Setting";
-import {isBooleanSetting} from "../../utils/ConfiguratorParameters";
-import {useStyles} from "../../style/styles";
+import {useStyles} from "../../style/useStyles";
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 import {Link} from "react-router-dom";
+import {makeStyles} from "@material-ui/styles";
 
 export const useSettingsAccordionStyles = makeStyles((theme) => ({
-    root: {
-        width: '100%',
-    },
-    heading: {
-        fontSize: theme.typography.pxToRem(15),
-        flexBasis: '33.33%',
-        flexShrink: 0,
-    },
-    secondaryHeading: {
-        fontSize: theme.typography.pxToRem(15),
-        color: theme.palette.text.secondary,
-    },
-}));
+        root: {
+            width: '100%',
+        },
+        heading: {
+            fontSize: theme.typography.pxToRem(15),
+            flexBasis: '33.33%',
+            flexShrink: 0,
+        },
+        secondaryHeading: {
+            fontSize: theme.typography.pxToRem(15),
+            color: theme.palette.text.secondary,
+        },
+    }), {index: 2});
 
 export default function SettingsComponent({name, settings, settingsValues, setSettingsValues, validations}) {
-    const classes = useSettingsAccordionStyles();
     const globalClasses = useStyles()
+    const classes = useSettingsAccordionStyles();
     const [expanded, setExpanded] = useState([]);
     const [errors, setErrors] = useState([])
 
     useEffect(() => {
-        (settings === undefined) ? setExpanded([]) : expanded.length === 0 && setExpanded(settings.filter(setting => setting.acceptType.parameterInputType !== "BOOLEAN"))
+        (settings === undefined) ? setExpanded([]) : expanded.length === 0 && setExpanded(settings)
     }, [settings])
 
     const handleAccordionClick = (setting) => (event, isExpanded) => {
@@ -61,7 +61,7 @@ export default function SettingsComponent({name, settings, settingsValues, setSe
     };
 
     return <div className={classes.root}>
-        <Typography variant="h4" style={{marginBottom: 10}}>{name}</Typography>
+        <Typography variant="h4" className="margin-bottom-10">{name}</Typography>
 
         {settings.map(setting => <Setting setting={setting}
                                           expanded={expanded}

@@ -2,9 +2,10 @@ import {Typography} from "@material-ui/core";
 
 export default function HomePage() {
     return <>
-        <Typography variant="h4" style={{marginBottom: 10}}>
-            Configure a <a href="https://github.com/stevehoover/warp-v" target="_blank">WARP-V</a> Core
-        </Typography>
+        <div className="margin-bottom-25">
+            <Typography variant="h4">
+                Configure a <a href="https://github.com/stevehoover/warp-v" target="_blank">WARP-V</a> Core
+            </Typography></div>
         <Typography paragraph>
             (Description). Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
             facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac

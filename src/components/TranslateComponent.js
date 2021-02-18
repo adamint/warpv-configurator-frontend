@@ -28,9 +28,9 @@ export default function TranslateComponent({settingsValues, post}) {
     }, [settingsValues])
 
     return <>
-        <Typography variant="h4" style={{marginBottom: 25}}>Generate WARP-V Core</Typography>
+        <Typography variant="h4" className="margin-bottom-25">Generate WARP-V Core</Typography>
 
-        <Typography variant="h5" style={{marginBottom: 25}}>Configuration as JSON</Typography>
+        <Typography variant="h5" className="margin-bottom-25">Configuration as JSON</Typography>
         <TextField
             label="JSON Configuration goes here"
             multiline
@@ -39,10 +39,10 @@ export default function TranslateComponent({settingsValues, post}) {
             fullWidth
             value={generatedJson ? generatedJson : ""}
             disabled
-            style={{marginBottom: 25}}
+            className="margin-bottom-25"
         />
 
-        <Typography variant="h5" style={{marginBottom: 20}}>TL-Verilog Configuration</Typography>
+        <Typography variant="h5" className="margin-bottom-25">TL-Verilog Configuration</Typography>
         <TextField
             label="Generated TL-Verilog goes here"
             multiline
@@ -51,7 +51,7 @@ export default function TranslateComponent({settingsValues, post}) {
             fullWidth
             value={generatedVerilog ? generatedVerilog : ""}
             disabled
-            style={{marginBottom: 25}}
+            className="margin-bottom-25"
         />
 
     </>

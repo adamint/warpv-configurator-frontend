@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {CssBaseline, useTheme} from "@material-ui/core";
-import {useStyles} from "./style/styles";
+import {useStyles} from "./style/useStyles";
 import Header from "./components/partials/Header";
 import SideBar from "./components/partials/SideBar";
 import {BrowserRouter} from "react-router-dom";
